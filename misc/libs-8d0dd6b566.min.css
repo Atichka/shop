@@ -934,13 +934,13 @@ textarea {
 }
 
 
-/* 
- * Stepper v3.0.8 - 2015-04-04 
- * A jQuery plugin for cross browser number inputs. Part of the Formstone Library. 
- * http://classic.formstone.it/stepper/ 
- * 
- * Copyright 2015 Ben Plum; MIT Licensed 
- */ 
+/*
+ * Stepper v3.0.8 - 2015-04-04
+ * A jQuery plugin for cross browser number inputs. Part of the Formstone Library.
+ * http://classic.formstone.it/stepper/
+ *
+ * Copyright 2015 Ben Plum; MIT Licensed
+ */
 
     .stepper { margin: 0 0 10px 0; overflow: hidden; position: relative; }
     .stepper .stepper-input { border: none; color: #333; font-size: 13px; line-height: 1.2; margin: 0; overflow: hidden; padding: 12px 0 10px; width: 40px; z-index: 49;
@@ -1002,7 +1002,7 @@ textarea {
     border:  5px solid #fff;
     left: -5px;*/
     background: #fff;
-    
+
     /*fix other elements on the page moving (on Chrome)*/
     -webkit-transform: translatez(0);
     -moz-transform: translatez(0);
