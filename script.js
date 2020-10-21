@@ -67,9 +67,9 @@ class Card {
         <div class="product__wrapper">
             <div class="product_count_wrapper">
                 <div class="stepper">
-                    <input id="buttonCountNumber" class="product__count stepper-input" type="text" value="1">
-                    <span id="buttonCountPlus" class="stepper-arrow up"></span>
-                    <span id="buttonCountMinus" class="stepper-arrow down"></span>
+                    <input class="product__count stepper-input" type="text" value="1">
+                    <span class="stepper-arrow up"></span>
+                    <span class="stepper-arrow down"></span>
                 </div>
             </div>
             <span class="btn btn_cart" data-url="/cart/" data-product-id="9bf0afd7-5190-11e5-b9a9-00259036a192">
@@ -129,7 +129,6 @@ window.addEventListener('load',function()
   fetch('./products.json')
   .then(response => response.json())
   .then((obj) => {
-    console.log(obj);
     return cardlist.render(obj);
   })
 })
