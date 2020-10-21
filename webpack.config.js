@@ -6,7 +6,7 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    index: './src/script.js',
+    index: './script.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -75,7 +75,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       inject: false,
-      template: 'src/index.html',
+      template: 'index.html',
       filename: 'index.html',
       favicon: 'favicon.ico'
     }),
