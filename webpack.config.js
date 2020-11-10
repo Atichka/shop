@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const webpack = require('webpack');
+const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
   entry: {
@@ -22,26 +23,12 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/i,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: { publicPath: '../', },
-          },
-          {
-            loader: 'css-loader',
-            options: { importLoaders: 1 },
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              config: {
-                path: __dirname + '/postcss.config.js'
-              }
-            },
-          },
+        test: /\.css$/i, // применять это правило только к CSS-файлам
+        use: [(isDev ? 'style-loader' : MiniCssExtractPlugin.loader), // в правилах укажите, что если вы собираете в режиме dev, то плагин MiniCssExtractPlugin загружать не нужно.
+            'css-loader',
+            'postcss-loader'
         ]
-      },
+    },
       {
         test: /\.(png|jpe?g|gif|svg|ico)$/i,
         use: [
@@ -71,7 +58,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: './styles/style.[contenthash].css',
+      filename: 'style.[contenthash].css',
     }),
     new HtmlWebpackPlugin({
       inject: false,

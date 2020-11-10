@@ -1,3 +1,5 @@
+import "./misc/libs-8d0dd6b566.min.css";
+import "./misc/bundle-1732f80f0a.min.css"
 class Card {
   constructor(code, primaryImageUrl, title, priceGold, priceRetail, assocProducts, unitAlt, unit, productId, priceGoldAlt) {
     this.cardElement = this.create(code, primaryImageUrl, title, priceGold, priceRetail, assocProducts, unitAlt, unit, productId, priceGoldAlt);
